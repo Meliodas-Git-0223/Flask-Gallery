@@ -7,16 +7,20 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
+
+    {% block sndstyles %}{% endblock %}
+
 <body>
     <div class="header">
 
-        <p class="header-head">{% block pageHead %}{% endblock %}</p>
+        {% block pageHead %}{% endblock %}
     </div>
 
     <div class="main">
 
         <div class="content">
-            <a href="/postpicture/">Добавить свою картинку</a>
+            {% block content%}{% endblock %}
         </div>
 
         <div class="cardsblock">

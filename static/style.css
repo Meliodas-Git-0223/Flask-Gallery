@@ -11,14 +11,7 @@ body{
     height: 60px;
     display: block;
 }
-.header-head{
-    color: rgb(255, 255, 255);
-    margin-top: 10px;
-    text-align: center;
-    font-size: 30px;
-    font-family: sans-serif;
-    display: block;
-}
+
 
 .main{
     display: block;
@@ -50,19 +43,96 @@ body{
     margin: auto;
 }
 
-.card{
-    width: 30%;
-    margin: 1%;
-    background-color: rgb(248, 180, 91);
-    display: block;
-    border-radius: 5px;
-}
+
 .card-image{
     width: 100%;
 }
 .card-image img {
     width: 100%;
 }
+
+.card-txt h1{
+    margin-left: 10px;
+}
+
+
+
+
+@media screen and (min-width:1000px) {
+
+    .card{
+    width: 30%;
+    margin: 1%;
+    background-color: rgb(248, 180, 91);
+    display: block;
+    border-radius: 5px;
+    }
+
+
+
+    .header-head{
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    display: block;
+    }
+}
+
+
+@media screen and (min-width:600px) and (max-width:999px) {
+
+    .card{
+        width: 47%;
+        margin: 1%;
+        background-color: rgb(248, 180, 91);
+        display: block;
+        border-radius: 5px;
+    }
+    
+    
+    
+        .header-head{
+        color: rgb(255, 255, 255);
+        margin-top: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: sans-serif;
+        display: block;
+    }
+    
+}
+
+
+@media screen and (min-width:200px) and (max-width:599px) {
+    .card{
+        width: 97%;
+        margin: 1%;
+        background-color: rgb(248, 180, 91);
+        display: block;
+        border-radius: 5px;
+    }
+    
+    
+    
+        .header-head{
+        color: rgb(255, 255, 255);
+        margin-top: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: sans-serif;
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
