@@ -5,6 +5,15 @@
 
 {% block pageHead %}<h1 class="header-head">Галерея</h1>{% endblock %}
 
+{% block sndstyles %}
+<style>
+    .linktoimage{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+{% endblock %}
+
 {% block cards %}
     {% for image in imagelist %}
         <div class="card">
@@ -12,7 +21,11 @@
                 <img src="static/images/{{image}}">
             </div>
             <div class="card-txt">
-                <h1>{{image}}</h1>
+                <h3>
+                    <a href="/img/{{image}}" class="linktoimage">
+                        {{image}}
+                    </a>
+                </h3>
             </div>
         </div>
     {% endfor %}

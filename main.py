@@ -9,6 +9,15 @@ def home():
     print(imagelist)
     return render_template('home.html', imagelist = imagelist)
 
+
+@app.route('/img/<imagename>')
+def imagepage(imagename):
+	imagelist = os.listdir('./static/images/')
+	for image in imagelist:
+		if imagename in image:
+			srcpic = image
+	return render_template('image-show.html', srcpic = srcpic, imagename=imagename)
+
 @app.errorhandler(404)
 def error_not_found(e):
     return render_template("not-found.html") , 404

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block title %}Посмотреть поближе{% endblock %}
+
+
+{% block pageHead %}
+    <h1 class="header-head"><a href="/" class="linktohome">Главная</a></h1>
+{% endblock %}
+
+{% block sndstyles %}
+<style>
+    .linktohome{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .imageshow{
+        border: 1px solid black;
+        width: 100%;
+    }
+    
+    .imageContainer{
+        margin-top: 60px;
+        display: block;
+        width: 100%;
+    }
+    
+    .main{
+        width: 99%;
+    }
+</style>
+{% endblock %}
+
+
+{% block bforimg %}
+    <div class="imageContainer">
+        <img src="/static/images/{{srcpic}}" alt="" class="imageshow">
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h1>{{imagename}}</h1>
+{% endblock %}
+
+
