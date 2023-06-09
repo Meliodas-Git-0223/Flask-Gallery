@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">
+
+        <p class="header-head">{% block pageHead %}{% endblock %}</p>
+    </div>
+
+    <div class="main">
+
+        <div class="content">
+            <a href="/postpicture/">Добавить свою картинку</a>
+        </div>
+
+        <div class="cardsblock">
+            {% block cards %}{% endblock %}
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <p>copyright 2023</p>
+    </div>
+
+</body>
+</html>
