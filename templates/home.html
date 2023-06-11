@@ -11,7 +11,27 @@
         text-decoration: none;
         color: black;
     }
+
+    .schemeCont{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .pagee{
+        width: 20px;
+        margin: 5px;
+        display: block;
+    }
 </style>
+{% endblock %}
+
+{% block content %}
+    <div class="schemeCont">
+    {% for i in range(1, pagesCount) %}
+        <div class="pagee"><a href="/{{i}}">{{i}}</a></div>
+    {% endfor %}
+    </div>
 {% endblock %}
 
 {% block cards %}
@@ -29,4 +49,12 @@
             </div>
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block submain%}
+    <div class="schemeCont">
+    {% for i in range(1, pagesCount) %}
+        <div class="pagee"><a href="/{{i}}">{{i}}</a></div>
+    {% endfor %}
+    </div>
 {% endblock %}

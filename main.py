@@ -1,13 +1,24 @@
 from flask import Flask, render_template
 import os
+from math import ceil
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+@app.route("/<int:pageNum>")
+def home(pageNum):
+    Elements = 30
     imagelist = os.listdir("./static/images/")
+
+    elem = 1
+    for file in imagelist:
+        elem +=1
+    
+    pag = ceil(elem/Elements)
+    
+    imagelist = imagelist[(pageNum*Elements)-Elements:pageNum*Elements]
     print(imagelist)
-    return render_template('home.html', imagelist = imagelist)
+    return render_template('home.html', imagelist = imagelist, pagesCount = pag)
 
 
 @app.route('/img/<imagename>')

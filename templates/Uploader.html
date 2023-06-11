@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Загрузить{% endblock %}
+
+{% block pageHead %}<h1 class="header-head">Загрузить</h1>{% endblock %}
+
+{% block content %}
+    <h2>Тут вы можете загрузить свои фото</h2>
+    <h4>Доступны расширения: *.png, *.jpg, *.webp</h4>
+
+    <div class="formContainer">
+        <form action="">
+            <p>Напишите название для вашего фото</p>
+            <input type="text" name="Name" id="" autocomplete="off">
+            <p>Загрузите картинку</p>
+            <input type="file" name="image" id="">
+            <button type="submit"></button>
+        </form>
+    </div>
+{% endblock %}
