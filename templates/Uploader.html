@@ -9,12 +9,10 @@
     <h4>Доступны расширения: *.png, *.jpg, *.webp</h4>
 
     <div class="formContainer">
-        <form action="">
-            <p>Напишите название для вашего фото</p>
-            <input type="text" name="Name" id="" autocomplete="off">
-            <p>Загрузите картинку</p>
-            <input type="file" name="image" id="">
-            <button type="submit"></button>
-        </form>
+        <form action="" method='post' enctype='multipart/form-data'>
+            <p><input type="text" name="Fname">
+            <p><input type='file' name='file'>
+               <input type='submit' value='Upload'>
+          </form>
     </div>
 {% endblock %}

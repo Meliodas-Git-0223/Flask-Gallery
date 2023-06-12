@@ -1,2 +1,3 @@
 /static/images/*
 *.db
+__pycache__
