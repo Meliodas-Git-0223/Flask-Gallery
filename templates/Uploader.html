@@ -4,15 +4,67 @@
 
 {% block pageHead %}<h1 class="header-head">Загрузить</h1>{% endblock %}
 
+{% block sndstyles %}
+<style>
+    .submitButton{
+        background-color: blue;
+        color: white;
+        font-family: sans-serif;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        width: 150px;
+        height: 30px;
+        font-size: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .TextPlace{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    .InpFile{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .toHomeButt{
+        display: block;
+        background-color: blue;
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .linkHome{
+        text-decoration: none;
+        color: white;
+        font-family: sans-serif;
+        font-weight: bold;
+        position: relative; top: 15px;
+    }
+
+</style>
+{% endblock %}
+
 {% block content %}
+    <div class="toHomeButt">
+        <h3><a href="/" class="linkHome">На главную</a></h3>
+    </div>
     <h2>Тут вы можете загрузить свои фото</h2>
     <h4>Доступны расширения: *.png, *.jpg, *.webp</h4>
 
     <div class="formContainer">
         <form action="" method='post' enctype='multipart/form-data'>
-            <p><input type="text" name="Fname">
-            <p><input type='file' name='file'>
-               <input type='submit' value='Upload'>
+            <p><input type="text" name="Fname" class="TextPlace">
+            <p><input type='file' name='file' class="InpFile"><br>
+               <input type='submit' value='Загрузить' class="submitButton">
           </form>
     </div>
 {% endblock %}
