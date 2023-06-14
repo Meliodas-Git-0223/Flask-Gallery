@@ -86,7 +86,12 @@ def admin(pageNum = 1):
     imagess = {}
     for i in imagelist:
         imagess[i] = use8.decode(i.split(".")[0])
-    return render_template('home.html', imagelist = imagess, pagesCount = pag)
+    return render_template('adminPage.html', imagelist = imagess, pagesCount = pag)
+
+@app.route('/delete/<image>')
+def delete(image):
+    os.remove(f"static/images/{image}")
+    return use8.decode(image.split(".")[0]) + " ||||| "+ image + "||||||||  Was deleted from server"
 
 
 @app.errorhandler(404)

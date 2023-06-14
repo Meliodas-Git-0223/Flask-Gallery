@@ -41,6 +41,23 @@
         font-family: sans-serif;
         
     }
+
+    .watchbutt{
+        display: block;
+        border-radius: 5px;
+        background-color: blue;
+        width: 100px;
+        height: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .watchbutt a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
 </style>
 {% endblock %}
 
@@ -71,6 +88,9 @@
                         {{imagelist[image]}}
                     </a>
                 </p>
+            </div>
+            <div class="watchbutt">
+                <a href="/img/{{image}}">Смотреть</a>
             </div>
         </div>
     {% endfor %}

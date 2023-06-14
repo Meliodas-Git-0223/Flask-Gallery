@@ -63,7 +63,7 @@
     {% for image in imagelist %}
         <div class="card">
             <div class="card-image">
-                <img src="static/images/{{image}}">
+                <img src="/static/images/{{image}}">
             </div>
             <div class="card-txt">
                 <p>
@@ -72,6 +72,7 @@
                     </a>
                 </p>
             </div>
+            <a href="/delete/{{image}}">Delete</a>
         </div>
     {% endfor %}
 {% endblock %}
