@@ -1,5 +1,5 @@
 from flask import Flask, render_template,  flash, request, redirect, url_for
-import os
+import os,datetime
 from math import ceil
 from werkzeug.utils import secure_filename
 import use8
@@ -16,16 +16,13 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')
 @app.route("/<int:pageNum>")
 def home(pageNum = 1):
-    elem = 0
-    if pageNum == None:
-        pageNum = 1
 
     Elements = 30
     imagelist = os.listdir("./static/images/")
 
     
-    for file in imagelist:
-        elem +=1
+    
+    elem = len(imagelist)
     
     pag = ceil(elem/Elements)
     
@@ -55,7 +52,11 @@ def upload():
     images = os.listdir("./static/images/")
     if request.method == 'POST':
         name = request.form.get("Fname")
-        encName = use8.encode(name)
+        if name:
+            encName = use8.encode(name)
+        else:
+            now = datetime.datetime.now()
+            encName = use8.encode(str(now))
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(encName + "."+ file.filename.split(".")[1])

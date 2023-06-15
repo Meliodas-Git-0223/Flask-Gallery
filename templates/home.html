@@ -58,10 +58,34 @@
         font-weight: bold;
         font-family: sans-serif;
     }
+
+    .popupBlock{
+        width: 50%;
+        background-color: black;
+        display: none;
+        height: 500px;
+        position: fixed; top: auto; right: 25%;
+    }
+    .closePopup{
+        color: red;
+        display: block;
+        width: 25px;
+        margin-left: auto;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
+
+    <div class="popupBlock">
+        <div class="closePopup">
+            <img src="/static/cross-a40000.svg" onclick="closePopup();" width="100%">
+        </div>
+        <div class="imagecont">
+            <img src="" class="popupimage">
+        </div>
+    </div>
+
     <div class="schemeCont">
     {% for i in range(1, pagesCount+1) %}
         <div class="pagee"><a href="/{{i}}">{{i}}</a></div>
@@ -69,6 +93,8 @@
     </div>
 
     <h3>Если будете загружать изображение, то загружайте горизонтальные фото</h3>
+
+    <h3>попап показ картинок на вертикальном экране смартфона может быть крайне неправильным</h3>
 
     <div class="loadbutt">
         <a href="/upload">Загрузка изображения</a>
@@ -80,7 +106,7 @@
     {% for image in imagelist %}
         <div class="card">
             <div class="card-image">
-                <img src="static/images/{{image}}">
+                <img src="static/images/{{image}}" onclick="showPopup(this);" >
             </div>
             <div class="card-txt">
                 <p>
