@@ -61,7 +61,7 @@ def upload():
         if file and allowed_file(file.filename):
             filename = secure_filename(encName + "."+ file.filename.split(".")[1])
             if filename in images:
-                filename = secure_filename(encName + '_28_D0_95_D1_89_D1_91_20_D0_BE_D0_B4_D0_B8_D0_BD_29' + "."+ file.filename.split(".")[1])
+                filename = secure_filename(encName + use8.encode(str(datetime.datetime.now())) + "."+ file.filename.split(".")[1])
             else:
                 filename = filename
             print(filename)
